@@ -4,23 +4,6 @@ RGB::RGB()
 {
 }
 
-void RGB::color_pixel(int red, int green, int blue)
-{
-    /*
-     MapRGB['R'].push_back(red);
-     MapRGB['G'].push_back(green);
-     MapRGB['B'].push_back(blue);*/
-
-
-}
-
-void RGB::ubicacion_archivo()
-{
-    filename = "../parcial2-info2/imagen/bandera.jpg"; //ubicacion del archivo
-
-    //filename.c_str();
-}
-
 void RGB::capturaRGB(QImage imagen)
 {
 
@@ -38,8 +21,16 @@ void RGB::capturaRGB(QImage imagen)
            lista.push_back(Blue);
            RGB_lista[2].push_back(lista);
            lista.clear();
-
-           //matrix.color_pixel(Red, Green, Blue);
        }
     }
+}
+
+void RGB::escribir_Archivo(int *datos)
+{
+    fstream matriz;
+    string nombre = "Archivo.txt";
+    matriz.open(nombre, fstream::out);
+    matriz<<datos;
+    //matriz.write(datos, tamanio);
+    matriz.close();
 }
