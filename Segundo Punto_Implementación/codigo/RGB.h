@@ -13,7 +13,11 @@ class RGB
 public:
     RGB();
     void capturaRGB(QImage imagen);
-    void escribir_Archivo(int *datos);
+    list<int> lectura_matrix(list<list<int>> matrix);
+    void crear_txt(string name);
+    void escribir_Archivo(string nombre,list<list<int> > matrix );
+
+
 
 private:
     int Red, Blue,Green;
