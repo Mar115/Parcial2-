@@ -4,6 +4,7 @@
 #include <QImage>
 #include <list>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -13,7 +14,8 @@ class RGB
 public:
     RGB();
     void capturaRGB(QImage imagen);
-    list<int> lectura_matrix(list<list<int>> matrix);
+    vector<int> lectura_matrix(list<list<int>> matrix);
+    void sobreMostreo(int tamX, int tamY, list<list<int> > matrix);
     void crear_txt(string name);
     void escribir_Archivo(string nombre,list<list<int> > matrix );
 

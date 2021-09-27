@@ -17,15 +17,21 @@ int main()
     IDEAS:  1. Diseñar la matriz
             2. Diseñar función para escribir en un archivo .txt*/
 
-     //                       R,G,B
-    list<list<int>> pruebA = {{{1,2,3}},
-                              {{4,5,6}},
-                              {{7,8,9}}};
+
+    list<list<int>> pruebA =  {{{184,19,175, 184,19,175, 184,19,175, 184,19,175, 184,19,175, 184,19,175, 184,19,175, 184,19,175}},
+
+                              {{160,27,25, 160,27,25, 160,27,25, 160,27,25}},
+
+                              {{8, 126,24, 8, 126,24, 8, 126,24, 8, 126,24}}
+                              };
+
+     //                         R,G,B
     /*int pruebaB[3][3][3] = {{{1,2,3}},
                          {{4,5,6}},
                          {{7,8,9}}};*/
     //lectura_matrix(pruebA);
     //matrix.lectura_matrix(pruebA);
+    matrix.sobreMostreo(12,12, pruebA);
     matrix.escribir_Archivo("archivo.txt",pruebA);
     return 0;
 }
