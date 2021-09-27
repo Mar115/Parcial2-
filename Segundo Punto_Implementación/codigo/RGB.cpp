@@ -23,12 +23,13 @@ void RGB::capturaRGB(QImage imagen)
            lista.clear();
        }
     }
+    lectura_matrix(RGB_lista);
 }
 //Se lleva toda la información de la imagen a una lista
-vector<int> RGB::lectura_matrix(list<list<int> > matrix)
+vector<int> RGB::lectura_matrix(list<list<int> > matrix[3])
 {
     vector<int> capturaAll;
-    for(list<list<int>>::iterator itPrueba = matrix.begin(); itPrueba!=matrix.end();++itPrueba){
+    for(list<list<int>>::iterator itPrueba = matrix->begin(); itPrueba!=matrix->end();++itPrueba){
         for(list<int>::iterator cap=itPrueba->begin();cap!=itPrueba->end();++cap){
             capturaAll.push_back(*cap);
         }
@@ -36,11 +37,12 @@ vector<int> RGB::lectura_matrix(list<list<int> > matrix)
     return capturaAll;
 }
 
-list<int> RGB::subMostreo(int tamX, int tamY, list<list<int> > matrix)
+list<int> RGB::subMostreo(int tamX, int tamY, list<list<int> > matrix[3])
 {
     vector<int> matriz;
     list<int> lista_to_TinkerCad;
     matriz = lectura_matrix(matrix);
+    //matriz = lectura_matrix(matrix);
     int LEDS = 2;
     int bloquesX_ = tamX, bloquesY_ = tamY;
     int bloquesX = tamX/LEDS, bloquesY = tamY/LEDS;
