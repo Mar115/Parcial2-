@@ -15,9 +15,9 @@ public:
     RGB();
     void capturaRGB(QImage imagen);
     vector<int> lectura_matrix(list<list<int>> matrix);
-    void sobreMostreo(int tamX, int tamY, list<list<int> > matrix);
+    list<int> subMostreo(int tamX, int tamY, list<list<int> > matrix);
     void crear_txt(string name);
-    void escribir_Archivo(string nombre,list<list<int> > matrix );
+    void escribir_Archivo(string nombre, list<int> capturaAll_ );
 
 
 
