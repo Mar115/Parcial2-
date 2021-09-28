@@ -96,69 +96,21 @@ list<int> RGB::subMostreo(int tamX, int tamY, list<list<int> > matrix[3])
     }
 
 
-    /*
-    for(int inicio = 0; inicio < bloquesY-1; inicio++){
-        for(int final = 0; final < bloquesX-1; final++){
-            matRed[inicio][final] = promAcumuladoRed;
-        }
-    }*/
 
-    //promedio += matriz[vecInterno];
-
-    //matGreen[filas+1][columnas+condicion] = matriz[vecInterno+condicion];
-    //matBlue[filas+2][columnas+(condicion*2)] = matriz[vecInterno+(condicion*2)];
-    /*else if(filas<condicion*2 && filas<condicion){
-        matGreen[filas][columnas] = *cap;
-    }*/
-    /*else if((filas%2==1 && filas<bloquesX)){
-
-    }*/
-    //vector<int>::iterator cap=matriz.begin();cap!=matriz.end();++cap
-    /*
-    matRed[externo][interno] = (*cap);
-    cout << matRed[externo][interno]<< endl;
-    interno++;*/
-   // promedio+= (matRed[externo][interno]);
-    /*
-    for(int filas=0; filas < LEDS; filas++){
-        for(int columnas=0, vecInterno=condicion; columnas < LEDS; columnas++, vecInterno++){
-            matGreen[filas][columnas] = matriz[vecInterno+condicion];}}
-    for(int filas=0; filas < LEDS; filas++){
-        for(int columnas=0, vecInterno=32; columnas < LEDS; columnas++, vecInterno++){
-            matBlue[filas][columnas] = matriz[vecInterno];}}*/
-
-    //Matriz Red:
-
-    //Matriz Green:
-    //Matriz Blue:
     return lista_to_TinkerCad;
 }
 void RGB:: crear_txt(string name){
-    fstream text (name,fstream::out); //abre modo escritura, si no exite  lo crea
+    fstream text (name,fstream::out); //abre modo escritura, si no existe  lo crea
     text.close();
 }
 
 void RGB::escribir_Archivo(string nombre,list<int> capturaAll_)
 {
     fstream text (nombre, fstream::out);
-    //capturaAll_=lectura_matrix(matrix);
     for(list<int>::iterator values = capturaAll_.begin(); values!=capturaAll_.end();++values){
         text << *values << ',';
-        //cout << *values << ',';
-
-        //text<<&capturaAll_;
     }
     text.close();
 }
 
-/*void RGB::escribir_Archivo(RGB datos)
-{
-    fstream matriz;
-    string nombre = "Archivo.txt";
-    matriz.open(nombre, fstream::out);
-    matriz<<&datos;
-    //matriz.write(datos, tamanio);
-    matriz.close();
-}*/
 
-//vector<int>::iterator cap=matriz.begin();cap!=matriz.end();++cap
